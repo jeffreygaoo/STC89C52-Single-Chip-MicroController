@@ -1,0 +1,235 @@
+C51 COMPILER V9.00   ESP8266                                                               06/06/2015 11:42:09 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE ESP8266
+OBJECT MODULE PLACED IN ESP8266.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE ESP8266.c LARGE BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          
+   2          
+   3          
+   4          #include <REGX52.H>
+   5          #include<intrins.h>
+   6          
+   7          typedef unsigned int uint;
+   8          typedef unsigned char uchar;
+   9          /**串口数据使用**/
+  10          #define RX1_Lenth               32                      //串口接收缓冲长度
+  11          
+  12          uchar   idata RX1_Buffer[RX1_Lenth];    //接收缓冲
+  13          uchar   TX1_Cnt;        //发送计数
+  14          uchar   RX1_Cnt;        //接收计数
+  15          bit             B_TX1_Busy;     //发送忙标志
+  16          
+  17          /*************  端口引脚定义    **************/
+  18          sbit LED1=P1^0;//LED1
+  19          sbit LED2=P1^1;//LED2
+  20          sbit LED3=P1^2;//LED3
+  21          sbit DK1=P1^3;//继电器
+  22          sbit BEEP=P2^5;//蜂鸣器 
+  23          
+  24          /**wifi模块命令**/
+  25          unsigned char LYMS[13]="AT+CWMODE=2\r\n";
+  26          unsigned char SZLY[38]="AT+CWSAP='ESP8266','0123456789',11,0\r\n";
+  27          unsigned char RST[8]="AT+RST\r\n";
+  28          unsigned char SZDLJ[13]="AT+CIPMUX=1\r\n";
+  29          unsigned char KQFU[21]="AT+CIPSERVER=1,5000\r\n";
+  30          unsigned char FSSJ[13]="AT+CIPSEND=\r\n";//AT+CIPSEND= 发送数据  
+  31          
+  32          
+  33          void Delay2(unsigned long cnt)
+  34          {
+  35   1              long i;
+  36   1              for(i=0;i<cnt*100;i++);
+  37   1      }
+  38          void Delay3(unsigned int N) 
+  39          {
+  40   1              int i;
+  41   1              for(i=0;i<N*10;i++);
+  42   1      }
+  43          
+  44          
+  45          
+  46          /********************************************************************
+  47          * 名称 : Uart_Init()
+  48          * 功能 : 串口初始化，晶振11.0592,波特率9600，使能了串口中断
+  49          * 输入 : 无
+  50          * 输出 : 无
+  51          ***********************************************************************/
+  52          void Uart_Init(void)
+  53          {
+  54   1           TMOD = 0x20;   //定时器工作在定时器1的方式2
+  55   1           PCON = 0x00;   //不倍频
+C51 COMPILER V9.00   ESP8266                                                               06/06/2015 11:42:09 PAGE 2   
+
+  56   1           SCON = 0x50;       //串口工作在方式1，并且启动串行接收     
+  57   1           TH1 = 0xFd;    //设置波特率 9600
+  58   1           TL1 = 0xFd;
+  59   1           TR1 = 1;           //启动定时器1
+  60   1               ES = 1;                //开串口中断
+  61   1               EA = 1;                //开总中断
+  62   1               RX1_Cnt=0;             //接受计数清零
+  63   1               TX1_Cnt = 0;   //发送计数清零
+  64   1               B_TX1_Busy = 0;//初始化判忙标志位              
+  65   1      }
+  66          /********************************************************************
+  67          * 名称 : Main()
+  68          * 功能 : 主函数
+  69          * 输入 : 无
+  70          * 输出 : 无
+  71          ***********************************************************************/
+  72          void main(void)
+  73          {
+  74   1              char i=0;
+  75   1      
+  76   1              Uart_Init();
+  77   1      
+  78   1              Delay3(2000);
+  79   1        /******************设置WiFi模块**********************************************/
+  80   1              for(i=0;i<13;i++)//AT+CWMODE=2 设置成路由模式
+  81   1              {
+  82   2                      SBUF=LYMS[i];Delay3(5);
+  83   2              }
+  84   1              Delay3(1000);
+  85   1              for(i=0;i<38;i++)//AT+CWSAP="ESP8266","0123456789",11,0 设置路由
+  86   1              {
+  87   2                      SBUF=SZLY[i];Delay3(5);
+  88   2              }
+  89   1              Delay3(3000);
+  90   1              for(i=0;i<8;i++)//AT+RST 重启
+  91   1              {
+  92   2                      SBUF=RST[i];Delay3(5);
+  93   2              }
+  94   1              Delay3(5000);
+  95   1              for(i=0;i<13;i++)//AT+CIPMUX=1 设置成多连接
+  96   1              {
+  97   2                      SBUF=SZDLJ[i];Delay3(5);
+  98   2              }
+  99   1              Delay3(2000);
+ 100   1              for(i=0;i<21;i++)//AT+CIPSERVER=1,5000 开启TCP服务端口
+ 101   1              {
+ 102   2                      SBUF=KQFU[i];Delay3(5);
+ 103   2              }
+ 104   1              Delay3(2000);
+ 105   1              while (1)
+ 106   1              {
+ 107   2              
+ 108   2              }
+ 109   1      }
+ 110          
+ 111          /********************************************************************
+ 112          * 名称 : Uart_Int()
+ 113          * 功能 : 串口中断子函数
+ 114          * 输入 : 无
+ 115          * 输出 : 无
+ 116          ***********************************************************************/
+ 117          void UART1_int (void) interrupt 4
+C51 COMPILER V9.00   ESP8266                                                               06/06/2015 11:42:09 PAGE 3   
+
+ 118          {
+ 119   1      //      char i,a,b,c;
+ 120   1              if(RI)
+ 121   1              {
+ 122   2                      RI = 0;
+ 123   2                      RX1_Buffer[RX1_Cnt] = SBUF;             //保存一个字节
+ 124   2                      if(RX1_Buffer[0]==0x45)
+ 125   2                      {
+ 126   3                              RX1_Cnt++;
+ 127   3                      }
+ 128   2                      else
+ 129   2                      {
+ 130   3                              RX1_Cnt=0;
+ 131   3                      }
+ 132   2                      if(RX1_Cnt>=10)
+ 133   2                      {
+ 134   3                              if(RX1_Buffer[0]==0x45&&RX1_Buffer[1]==0x53&&RX1_Buffer[2]==0x50)
+ 135   3                              {
+ 136   4                                      if(RX1_Buffer[4]==0x4C&&RX1_Buffer[5]==0x45&&RX1_Buffer[6]==0x44)//判断LED
+ 137   4                                      {
+ 138   5                                              if(RX1_Buffer[7]==0x31)//判断LED1
+ 139   5                                              {
+ 140   6                                                      if(RX1_Buffer[3]==0x4B)//判断开
+ 141   6                                                      {
+ 142   7                                                              LED1=0;
+ 143   7                                                      }
+ 144   6                                                      if(RX1_Buffer[3]==0x47)//判断关
+ 145   6                                                      {
+ 146   7                                                              LED1=1;
+ 147   7                                                      }
+ 148   6                                              }
+ 149   5                                              if(RX1_Buffer[7]==0x32)//判断LED2
+ 150   5                                              {
+ 151   6                                                      if(RX1_Buffer[3]==0x4B)//判断开
+ 152   6                                                      {
+ 153   7                                                              LED2=0;
+ 154   7                                                      }
+ 155   6                                                      if(RX1_Buffer[3]==0x47)//判断关
+ 156   6                                                      {
+ 157   7                                                              LED2=1;
+ 158   7                                                      }
+ 159   6                                              }
+ 160   5                                              if(RX1_Buffer[7]==0x33)//判断LED3
+ 161   5                                              {
+ 162   6                                                      if(RX1_Buffer[3]==0x4B)//判断开
+ 163   6                                                      {
+ 164   7                                                              LED3=0;
+ 165   7                                                      }
+ 166   6                                                      if(RX1_Buffer[3]==0x47)//判断关
+ 167   6                                                      {
+ 168   7                                                              LED3=1;
+ 169   7                                                      }
+ 170   6                                              }
+ 171   5                                      }
+ 172   4                                      if(RX1_Buffer[4]==0x4A&&RX1_Buffer[5]==0x44&&RX1_Buffer[6]==0x51)//判断继电器
+ 173   4                                      {
+ 174   5                                              if(RX1_Buffer[7]==0x31)//判断LED1
+ 175   5                                              {
+ 176   6                                                      if(RX1_Buffer[3]==0x4B)//判断开
+ 177   6                                                      {
+ 178   7                                                              DK1=1;
+ 179   7                                                      }
+C51 COMPILER V9.00   ESP8266                                                               06/06/2015 11:42:09 PAGE 4   
+
+ 180   6                                                      if(RX1_Buffer[3]==0x47)//判断关
+ 181   6                                                      {
+ 182   7                                                              DK1=0;
+ 183   7                                                      }
+ 184   6                                              }
+ 185   5                                      }
+ 186   4                                      if(RX1_Buffer[3]==0x46&&RX1_Buffer[4]==0x4D&&RX1_Buffer[5]==0x51&&RX1_Buffer[6]==0x43&&RX1_Buffer[7]==
+             -0x53)//判断蜂鸣器
+ 187   4                                      {
+ 188   5                                              BEEP=1;Delay2(100);BEEP=0;Delay2(100);BEEP=1;Delay2(100);BEEP=0;Delay2(100);
+ 189   5                                      }
+ 190   4                                      RX1_Cnt=0;
+ 191   4                              }
+ 192   3                              else
+ 193   3                              {
+ 194   4                                      RX1_Cnt=0;
+ 195   4                              }
+ 196   3                              RX1_Cnt=0;
+ 197   3                      }
+ 198   2              }
+ 199   1              if(TI)
+ 200   1              {
+ 201   2                      TI = 0;
+ 202   2                      B_TX1_Busy = 0;         //清除发送忙标志
+ 203   2              }
+ 204   1      }
+ 205          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    661    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =    108       8
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =     32    ----
+   BIT SIZE         =      1    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

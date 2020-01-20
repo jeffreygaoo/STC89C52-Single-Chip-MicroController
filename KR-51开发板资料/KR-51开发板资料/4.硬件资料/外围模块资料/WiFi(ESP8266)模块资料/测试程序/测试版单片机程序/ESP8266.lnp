@@ -1,0 +1,3 @@
+"ESP8266.obj" 
+TO "ESP8266" 
+RAMSIZE(256) 

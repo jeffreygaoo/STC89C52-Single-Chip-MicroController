@@ -1,0 +1,50 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\hao\Desktop\²âÊÔ°æµ¥Æ¬»ú³ÌÐò\ESP8266.uvproj
+Project File Date:  06/06/2015
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling ESP8266.c...
+linking...
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_DELAY1?ESP8266
+    CALLER1: ?PR?UART1_INT?ESP8266
+    CALLER2: ?C_C51STARTUP
+Program Size: data=41.1 xdata=135 code=1541
+creating hex file from "ESP8266"...
+"ESP8266" - 0 Error(s), 1 Warning(s).
+compiling ESP8266.c...
+ESP8266.C(142): warning C280: 'i': unreferenced local variable
+ESP8266.C(142): warning C280: 'a': unreferenced local variable
+ESP8266.C(142): warning C280: 'b': unreferenced local variable
+ESP8266.C(142): warning C280: 'c': unreferenced local variable
+ESP8266.c - 0 Error(s), 4 Warning(s).
+compiling ESP8266.c...
+ESP8266.c - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY1?ESP8266
+Program Size: data=41.1 xdata=124 code=1167
+creating hex file from "ESP8266"...
+"ESP8266" - 0 Error(s), 1 Warning(s).
+compiling ESP8266.c...
+ESP8266.C(63): error C202: 'B_TX1_Busy': undefined identifier
+ESP8266.C(201): error C202: 'B_TX1_Busy': undefined identifier
+ESP8266.c - 2 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling ESP8266.c...
+linking...
+Program Size: data=41.1 xdata=116 code=1108
+creating hex file from "ESP8266"...
+"ESP8266" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling ESP8266.c...
+linking...
+Program Size: data=41.1 xdata=116 code=1108
+creating hex file from "ESP8266"...
+"ESP8266" - 0 Error(s), 0 Warning(s).

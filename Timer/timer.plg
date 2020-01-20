@@ -1,0 +1,34 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\HP\Desktop\单片机\四类程序\Timer\timer.uvproj
+Project File Date:  01/07/2020
+
+<h2>Output:</h2>
+Build target '目标 1'
+assembling STARTUP.A51...
+compiling timer.c...
+timer.c(28): error C202: 'conut': undefined identifier
+timer.c(31): error C202: 'led': undefined identifier
+目标未创建
+Build target '目标 1'
+compiling timer.c...
+timer.c(28): error C202: 'conut': undefined identifier
+timer.c(31): error C202: 'led': undefined identifier
+目标未创建
+Build target '目标 1'
+compiling timer.c...
+timer.c(28): error C202: 'conut': undefined identifier
+目标未创建
+Build target '目标 1'
+compiling timer.c...
+linking...
+Program Size: data=11.0 xdata=0 code=66
+"timer" - 0 Error(s), 0 Warning(s).
+Build target '目标 1'
+linking...
+Program Size: data=11.0 xdata=0 code=66
+creating hex file from "timer"...
+"timer" - 0 Error(s), 0 Warning(s).

@@ -1,0 +1,390 @@
+C51 COMPILER V9.00   MAIN                                                                  05/19/2017 15:53:20 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE USER\main.c BROWSE DEBUG OBJECTEXTEND PRINT(.\main.lst) OBJECT(main.obj)
+
+line level    source
+
+   1          #include "main.h"
+   2          sfr TEST=0xA1;  //判断是89C还是12C
+   3          bit MCU_TYPE=0;   //单片机型号 =0为89C   =1为12C  默认为89C
+   4          bit TES_MODE=0;         //自动测试 =0   手动测试=1
+   5          unsigned char step=0;
+   6          
+   7          void Mcu_type_judge()   //判断是89C还是12C
+   8          {
+   9   1              if (TEST!=0xA1)
+  10   1              {
+  11   2                      MCU_TYPE=1;
+  12   2              }
+  13   1              else
+  14   1              {
+  15   2                      MCU_TYPE=0;
+  16   2              }
+  17   1      }
+  18          
+  19          
+  20          void Key_test(void)
+  21          {
+  22   1              unsigned char temp=1;
+  23   1              while(temp)
+  24   1              {
+  25   2                      if (Key0==0)
+  26   2                      {
+  27   3                              BEEP=0;
+  28   3                              while(Key0==0); 
+  29   3                      }
+  30   2                      if (Key1==0)
+  31   2                      {
+  32   3                              BEEP=0;
+  33   3                              while(Key1==0); 
+  34   3                      }
+  35   2                      if (Key2==0)
+  36   2                      {
+  37   3                              BEEP=0;
+  38   3                              while(Key2==0); 
+  39   3                      }
+  40   2                      if (Key3==0)
+  41   2                      {
+  42   3                              BEEP=0;
+  43   3                              while(Key3==0); 
+  44   3                      }
+  45   2                      BEEP=1;
+  46   2              }
+  47   1              
+  48   1      }
+  49          
+  50          
+  51          void Mode_judge()
+  52          {
+  53   1              unsigned char i=1;
+  54   1              Beebee_100(2);
+  55   1              while (i)
+C51 COMPILER V9.00   MAIN                                                                  05/19/2017 15:53:20 PAGE 2   
+
+  56   1              {
+  57   2                      if (Key1==0)    //手动
+  58   2                      {
+  59   3                              TES_MODE=1;     
+  60   3                              i=0;
+  61   3                              while(Key1==0);
+  62   3                      }
+  63   2                      if (Key2==0)
+  64   2                      {
+  65   3                              i=0;
+  66   3                              while(Key1==0); 
+  67   3                              Key_test();     
+  68   3                      }
+  69   2                      if (Key3==0)    //自动
+  70   2                      {
+  71   3                              TES_MODE=0;
+  72   3                              i=0;
+  73   3                              while(Key3==0);
+  74   3                      }
+  75   2              }
+  76   1      }
+  77          
+  78          void Liushui_test(unsigned char num)
+  79          {
+  80   1              unsigned char i,j;
+  81   1              unsigned char LEDdis=0; //LED测试
+  82   1              for (i=0;i<num;i++)
+  83   1              {
+  84   2                      Beebee_200(1);
+  85   2                      for (j=0;j<2;j++)
+  86   2                      {
+  87   3                              P1=0;
+  88   3                              Delay_1MS(200);
+  89   3                              P1=0xff;
+  90   3                              Delay_1MS(100);
+  91   3                      }
+  92   2                      LEDdis=0x80;
+  93   2                      for (j=0;j<9;j++)
+  94   2                      {
+  95   3                              P1=~LEDdis;
+  96   3                              LEDdis>>=1;
+  97   3                              Delay_1MS(150);
+  98   3                      }
+  99   2              }
+ 100   1      }
+ 101          
+ 102          void LED_test(unsigned char num)
+ 103          {
+ 104   1              unsigned char i,j;
+ 105   1              unsigned int  temp=0;
+ 106   1              temp=0;
+ 107   1              Display_Buff[0]=temp%10000/1000;                
+ 108   1              Display_Buff[1]=temp%1000/100;
+ 109   1              Display_Buff[2]=temp%100/10;
+ 110   1              Display_Buff[3]=temp%10; 
+ 111   1              TR1=1;
+ 112   1              for (i=0;i<num;i++)
+ 113   1              {
+ 114   2                      Beebee_200(2);
+ 115   2                      for (j=0;j<10;j++)
+ 116   2                      {
+ 117   3                              temp=j*1111;
+C51 COMPILER V9.00   MAIN                                                                  05/19/2017 15:53:20 PAGE 3   
+
+ 118   3                              Display_Buff[0]=temp%10000/1000;                
+ 119   3                              Display_Buff[1]=temp%1000/100;
+ 120   3                              Display_Buff[2]=temp%100/10;
+ 121   3                              Display_Buff[3]=temp%10; 
+ 122   3                              Delay_1MS(300);
+ 123   3                      }
+ 124   2              }
+ 125   1              Stop_Display();
+ 126   1              TR1=0;
+ 127   1      }
+ 128          
+ 129          void TEMP_test(unsigned char num)
+ 130          {
+ 131   1              unsigned char i,j;
+ 132   1              unsigned int  temp=0;
+ 133   1              temp=0;
+ 134   1              Display_Buff[0]=temp%10000/1000;                
+ 135   1              Display_Buff[1]=temp%1000/100;
+ 136   1              Display_Buff[2]=temp%100/10;
+ 137   1              Display_Buff[3]=temp%10; 
+ 138   1              TR1=1;
+ 139   1              for (i=0;i<num;i++)
+ 140   1              {
+ 141   2                      Beebee_200(3);
+ 142   2                      for (j=0;j<10;j++)
+ 143   2                      {
+ 144   3                              temp=read_temp();
+ 145   3                              if (tflag)
+ 146   3                              {
+ 147   4                                      //温度为负
+ 148   4                                      Display_Buff[0]=16;
+ 149   4                              }
+ 150   3                              else
+ 151   3                              {
+ 152   4                                      Display_Buff[0]=temp%10000/1000;
+ 153   4                              }               
+ 154   3                              Display_Buff[1]=temp%1000/100;
+ 155   3                              Display_Buff[2]=temp%100/10;
+ 156   3                              Display_Buff[3]=temp%10;                //单位 摄氏度
+ 157   3                              Delay_1MS(300);
+ 158   3                      }
+ 159   2              }
+ 160   1              Stop_Display();
+ 161   1              TR1=0;
+ 162   1      }
+ 163          
+ 164          void INF_test()
+ 165          {
+ 166   1              unsigned char i=5;
+ 167   1              unsigned char tstep=step;
+ 168   1              Display_Buff[0]=0;
+ 169   1              Display_Buff[1]=0;
+ 170   1              Display_Buff[2]=0;
+ 171   1              Display_Buff[3]=0;
+ 172   1              TR1=1;
+ 173   1              Beebee_200(4);
+ 174   1              while(i)
+ 175   1              {
+ 176   2                      if (Infrared_Flag)
+ 177   2                      {
+ 178   3                              Infrared_Flag=0;
+ 179   3                              Display_Buff[0]=Infrared_Code[2]%10000/1000;            
+C51 COMPILER V9.00   MAIN                                                                  05/19/2017 15:53:20 PAGE 4   
+
+ 180   3                              Display_Buff[1]=Infrared_Code[2]%1000/100;
+ 181   3                              Display_Buff[2]=Infrared_Code[2]%100/10;
+ 182   3                              Display_Buff[3]=Infrared_Code[2]%10; 
+ 183   3                              Beebee_100(1);
+ 184   3                              i--;    
+ 185   3                      }
+ 186   2                      if (tstep!=step)        //测试项目改变 提前退出
+ 187   2                      {
+ 188   3                              i=0;
+ 189   3                      }
+ 190   2              }
+ 191   1              Stop_Display();
+ 192   1              TR1=0;
+ 193   1      }
+ 194          
+ 195          void LCD12864_test(unsigned char num)
+ 196          {
+ 197   1              unsigned char i;
+ 198   1              unsigned char word0[]={"科睿电子科技"};
+ 199   1              unsigned char word1[]={"科睿电子科技"};
+ 200   1              unsigned char word2[]={"科睿电子科技"};
+ 201   1              unsigned char word3[]={"科睿电子科技"};
+ 202   1              unsigned char word4[]={"测试完成"};
+ 203   1              unsigned char word5[]={"Finish the test"};
+ 204   1              LCD_Init();
+ 205   1              for (i=0;i<num;i++)
+ 206   1              {
+ 207   2                      Beebee_200(5);
+ 208   2                      Dis_many(word0,0,0);
+ 209   2                      Delay_1MS(800);
+ 210   2                      Dis_many(word1,1,0);
+ 211   2                      Delay_1MS(800);
+ 212   2                      Dis_many(word2,2,0);
+ 213   2                      Delay_1MS(800);
+ 214   2                      Dis_many(word3,3,0);
+ 215   2                      Delay_1MS(800);
+ 216   2                      Clear_Dis12864();
+ 217   2              }
+ 218   1              Dis_many(word0,0,1);
+ 219   1              Delay_1MS(800);
+ 220   1              Dis_many(word4,2,2);
+ 221   1              Delay_1MS(800);
+ 222   1              Dis_many(word5,3,0);
+ 223   1              Delay_1MS(800);
+ 224   1      }
+ 225          
+ 226          
+ 227          
+ 228          void Auto_test()
+ 229          {
+ 230   1              switch (step)
+ 231   1              {
+ 232   2      //              case 0: //按键测试
+ 233   2      //              {
+ 234   2      //                      Key_test();
+ 235   2      //                      step=1;
+ 236   2      //              }break;
+ 237   2                      case 0: //流水灯
+ 238   2                      {
+ 239   3                              Liushui_test(2);
+ 240   3                              step=1;
+ 241   3                      }break;
+C51 COMPILER V9.00   MAIN                                                                  05/19/2017 15:53:20 PAGE 5   
+
+ 242   2                      case 1: //数码管
+ 243   2                      {
+ 244   3                              LED_test(2);
+ 245   3                              step=2;
+ 246   3                      }break;
+ 247   2                      case 2: //温度计
+ 248   2                      {
+ 249   3                              TEMP_test(2);
+ 250   3                              step=3;
+ 251   3                      }break;
+ 252   2                      case 3: //1602
+ 253   2                      {
+ 254   3                              INF_test();
+ 255   3                              //BEEP=Key0;
+ 256   3                              step=4;
+ 257   3                      }break;
+ 258   2                      case 4: //1602
+ 259   2                      {
+ 260   3                              LCD12864_test(2);
+ 261   3                              step=5;
+ 262   3                      }break;
+ 263   2                      case 5: //12864
+ 264   2                      {
+ 265   3                              Beebee_100(5);
+ 266   3                      }break;
+ 267   2                      default:break;
+ 268   2              }
+ 269   1      }
+ 270          
+ 271          void Manual_test()
+ 272          {
+ 273   1              switch (step)
+ 274   1              {
+ 275   2                      case 0: //流水灯
+ 276   2                      {
+ 277   3                              Liushui_test(1);
+ 278   3                      }break;
+ 279   2                      case 1: //数码管
+ 280   2                      {
+ 281   3                              LED_test(1);
+ 282   3                      }break;
+ 283   2                      case 2: //温度计
+ 284   2                      {
+ 285   3                              TEMP_test(1);
+ 286   3                      }break;
+ 287   2                      case 3: //1602
+ 288   2                      {
+ 289   3                              INF_test();
+ 290   3                      }break;
+ 291   2                      case 4: //12864
+ 292   2                      {
+ 293   3                              LCD12864_test(1);
+ 294   3                      }break;
+ 295   2                      case 5: //12864
+ 296   2                      {
+ 297   3                              Beebee_100(5);
+ 298   3                      }break;
+ 299   2                      default:break;
+ 300   2              }
+ 301   1      }
+ 302          
+ 303          void Key_Init()
+C51 COMPILER V9.00   MAIN                                                                  05/19/2017 15:53:20 PAGE 6   
+
+ 304          {
+ 305   1              IT1=1;  //外部中断0低电平触发
+ 306   1      
+ 307   1              EX1=1;  //外部中断0使能 
+ 308   1              EA=1;
+ 309   1      }
+ 310          
+ 311          void Sys_Init()
+ 312          {
+ 313   1              Mcu_type_judge();       //芯片型号检测
+ 314   1              Mode_judge();           //测试模式选择
+ 315   1              LED_Init();
+ 316   1              INF_Init();
+ 317   1              Key_Init();
+ 318   1      }
+ 319          
+ 320          
+ 321          void main()
+ 322          {
+ 323   1              Sys_Init();
+ 324   1              while(1)
+ 325   1              {
+ 326   2                      if (TES_MODE==0)        //自动模式
+ 327   2                      {
+ 328   3                              Auto_test();
+ 329   3                      }
+ 330   2                      else
+ 331   2                      {
+ 332   3                              Manual_test();
+ 333   3                      }       
+ 334   2              }
+ 335   1      }
+ 336          
+ 337          void int1_isr () interrupt 2
+ 338          {
+ 339   1         if (Key1==0)
+ 340   1         {
+ 341   2                      Delay_1MS(100);
+ 342   2                      if (Key1==0)
+ 343   2                      {
+ 344   3                              if (step<4)
+ 345   3                              {
+ 346   4                                      step++;
+ 347   4                              }
+ 348   3                              else
+ 349   3                              {
+ 350   4                                      step=0;
+ 351   4                              }
+ 352   3                              while(Key1==0);
+ 353   3                      }
+ 354   2         }
+ 355   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   1369    ----
+   CONSTANT SIZE    =     77    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      1      96
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      2    ----
+C51 COMPILER V9.00   MAIN                                                                  05/19/2017 15:53:20 PAGE 7   
+
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

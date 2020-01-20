@@ -1,0 +1,79 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\HP\Desktop\单片机\四类程序\Seven_Seg_Display2\Seven_Seg_Display2.uvproj
+Project File Date:  01/06/2020
+
+<h2>Output:</h2>
+Build target '目标 1'
+assembling STARTUP.A51...
+compiling Seven_Seg_Display2.c...
+linking...
+Program Size: data=21.0 xdata=0 code=193
+"Seven_Seg_Display2" - 0 Error(s), 0 Warning(s).
+Build target '目标 1'
+linking...
+Program Size: data=21.0 xdata=0 code=193
+creating hex file from "Seven_Seg_Display2"...
+"Seven_Seg_Display2" - 0 Error(s), 0 Warning(s).
+Build target '目标 1'
+compiling Seven_Seg_Display2.c...
+Seven_Seg_Display2.c(25): warning C206: 'delayMS': missing function-prototype
+Seven_Seg_Display2.c(25): error C267: 'delayMS': requires ANSI-style prototype
+Seven_Seg_Display2.c(32): error C231: 'delayMS': redefinition
+Seven_Seg_Display2.c(38): error C231: 'delayMS': redefinition
+目标未创建
+Build target '目标 1'
+compiling Seven_Seg_Display2.c...
+Seven_Seg_Display2.c(15): error C244: 'bitcode': can't initialize, bad type or class
+Seven_Seg_Display2.c(15): error C132: 'bitcode': not in formal parameter list
+Seven_Seg_Display2.c(16): error C244: 'segcode': can't initialize, bad type or class
+Seven_Seg_Display2.c(16): error C132: 'segcode': not in formal parameter list
+Seven_Seg_Display2.c(19): error C132: 'main': not in formal parameter list
+Seven_Seg_Display2.c(19): error C141: syntax error near '{'
+Seven_Seg_Display2.c(23): error C132: 'i': not in formal parameter list
+Seven_Seg_Display2.c(23): error C136: 'i': 'void' on variable
+Seven_Seg_Display2.c(23): error C132: 'i': not in formal parameter list
+Seven_Seg_Display2.c(25): error C136: 'P0': 'void' on variable
+Seven_Seg_Display2.c(25): error C244: 'P0': can't initialize, bad type or class
+Seven_Seg_Display2.c(25): error C202: 'segcode': undefined identifier
+Seven_Seg_Display2.c(25): error C136: 'P0': 'void' on variable
+Seven_Seg_Display2.c(25): error C132: 'P0': not in formal parameter list
+Seven_Seg_Display2.c(26): error C244: 'P2': can't initialize, bad type or class
+Seven_Seg_Display2.c(26): error C132: 'P2': not in formal parameter list
+Seven_Seg_Display2.c(27): error C141: syntax error near '50'
+Seven_Seg_Display2.c(27): error C132: 'delayMS': not in formal parameter list
+Seven_Seg_Display2.c(28): error C141: syntax error near '}'
+目标未创建
+Build target '目标 1'
+compiling Seven_Seg_Display2.c...
+linking...
+Program Size: data=21.0 xdata=0 code=225
+creating hex file from "Seven_Seg_Display2"...
+"Seven_Seg_Display2" - 0 Error(s), 0 Warning(s).
+Build target '目标 1'
+compiling Seven_Seg_Display2.c...
+linking...
+Program Size: data=21.0 xdata=0 code=225
+creating hex file from "Seven_Seg_Display2"...
+"Seven_Seg_Display2" - 0 Error(s), 0 Warning(s).
+Build target '目标 1'
+compiling Seven_Seg_Display2.c...
+linking...
+Program Size: data=21.0 xdata=0 code=225
+creating hex file from "Seven_Seg_Display2"...
+"Seven_Seg_Display2" - 0 Error(s), 0 Warning(s).
+Build target '目标 1'
+compiling Seven_Seg_Display2.c...
+linking...
+Program Size: data=21.0 xdata=0 code=224
+creating hex file from "Seven_Seg_Display2"...
+"Seven_Seg_Display2" - 0 Error(s), 0 Warning(s).
+Build target '目标 1'
+compiling Seven_Seg_Display2.c...
+linking...
+Program Size: data=21.0 xdata=0 code=225
+creating hex file from "Seven_Seg_Display2"...
+"Seven_Seg_Display2" - 0 Error(s), 0 Warning(s).

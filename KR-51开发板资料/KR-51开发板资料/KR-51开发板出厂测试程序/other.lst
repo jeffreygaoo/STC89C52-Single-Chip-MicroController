@@ -1,0 +1,93 @@
+C51 COMPILER V9.00   OTHER                                                                 05/19/2017 15:53:20 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE OTHER
+OBJECT MODULE PLACED IN other.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE USER\other.c BROWSE DEBUG OBJECTEXTEND PRINT(.\other.lst) OBJECT(other.obj)
+
+line level    source
+
+   1          #include "main.h"
+   2          
+   3          void Delay_1MS(unsigned int dtime)
+   4          {
+   5   1              unsigned char i, j;
+   6   1              if (MCU_TYPE==1)
+   7   1              {
+   8   2                      while(dtime--)
+   9   2                      {
+  10   3                              i = 11;
+  11   3                              j = 190;
+  12   3                              do
+  13   3                              {
+  14   4                                      while (--j);
+  15   4                              } while (--i);  
+  16   3                      }       
+  17   2              }
+  18   1              else
+  19   1              {
+  20   2                      while(dtime--)
+  21   2                      {
+  22   3                              i = 2;
+  23   3                              j = 199;
+  24   3                              do
+  25   3                              {
+  26   4                                      while (--j);
+  27   4                              } while (--i);  
+  28   3                      }       
+  29   2              }
+  30   1      }
+  31          
+  32          
+  33          void Delay_1US(unsigned int dtime)
+  34          {
+  35   1              if (MCU_TYPE==1)
+  36   1              {
+  37   2                      while(dtime--); 
+  38   2              }
+  39   1              else
+  40   1              {
+  41   2                      dtime/=2;
+  42   2                      while(dtime--); 
+  43   2              }
+  44   1      }
+  45          
+  46          
+  47          void Beebee_100 (unsigned char num)
+  48          {
+  49   1              while(num--)
+  50   1              {
+  51   2                      BEEP=0;
+  52   2                      Delay_1MS(100);
+  53   2                      BEEP=1;
+  54   2                      Delay_1MS(100);
+  55   2              }
+C51 COMPILER V9.00   OTHER                                                                 05/19/2017 15:53:20 PAGE 2   
+
+  56   1      }
+  57          
+  58          
+  59          void Beebee_200 (unsigned char num)
+  60          {
+  61   1              while(num--)
+  62   1              {
+  63   2                      BEEP=0;
+  64   2                      Delay_1MS(200);
+  65   2                      BEEP=1;
+  66   2                      Delay_1MS(200);
+  67   2              }
+  68   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    135    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

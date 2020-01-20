@@ -1,0 +1,7 @@
+"DS18B20.obj",
+"INF.obj",
+"LED.obj",
+"main.obj",
+"other.obj",
+"LCD12864.obj" 
+TO "Test" 

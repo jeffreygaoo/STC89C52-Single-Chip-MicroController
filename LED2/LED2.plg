@@ -1,0 +1,383 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+D:\Keil projects\project1\四个程序\LED2\LED2.uvproj
+Project File Date:  01/05/2020
+
+<h2>Output:</h2>
+Build target '目标 1'
+assembling STARTUP.A51...
+compiling LED2.c...
+LED2.c(6): error C231: 'temp': redefinition
+LED2.c(7): error C231: 'P1': redefinition
+LED2.c(7): error C247: non-address/-constant initializer
+LED2.c(7): error C231: 'P1': redefinition
+LED2.c(17): error C202: 'p1': undefined identifier
+LED2.c(20): error C202: 'p1': undefined identifier
+LED2.c(23): error C202: 'p1': undefined identifier
+LED2.c(26): error C202: 'p1': undefined identifier
+LED2.c(29): error C202: 'p1': undefined identifier
+LED2.c(32): error C202: 'p1': undefined identifier
+LED2.c(35): error C202: 'p1': undefined identifier
+LED2.c(42): error C141: syntax error near 'void'
+目标未创建
+Build target '目标 1'
+compiling LED2.c...
+LED2.c(6): error C231: 'temp': redefinition
+LED2.c(7): error C231: 'P1': redefinition
+LED2.c(7): error C247: non-address/-constant initializer
+LED2.c(7): error C231: 'P1': redefinition
+LED2.c(17): error C202: 'p1': undefined identifier
+LED2.c(20): error C202: 'p1': undefined identifier
+LED2.c(23): error C202: 'p1': undefined identifier
+LED2.c(26): error C202: 'p1': undefined identifier
+LED2.c(29): error C202: 'p1': undefined identifier
+LED2.c(32): error C202: 'p1': undefined identifier
+LED2.c(35): error C202: 'p1': undefined identifier
+目标未创建
+Build target '目标 1'
+compiling LED2.c...
+LED2.c(6): error C231: 'temp': redefinition
+LED2.c(7): error C141: syntax error near 'temp', expected 'const'
+LED2.c(17): error C202: 'p1': undefined identifier
+LED2.c(20): error C202: 'p1': undefined identifier
+LED2.c(23): error C202: 'p1': undefined identifier
+LED2.c(26): error C202: 'p1': undefined identifier
+LED2.c(29): error C202: 'p1': undefined identifier
+LED2.c(32): error C202: 'p1': undefined identifier
+LED2.c(35): error C202: 'p1': undefined identifier
+目标未创建
+Build target '目标 1'
+compiling LED2.c...
+LED2.c(6): error C231: 'temp': redefinition
+LED2.c(7): error C141: syntax error near 'temp', expected 'const'
+LED2.c(17): error C202: 'p1': undefined identifier
+LED2.c(20): error C202: 'p1': undefined identifier
+LED2.c(23): error C202: 'p1': undefined identifier
+LED2.c(26): error C202: 'p1': undefined identifier
+LED2.c(29): error C202: 'p1': undefined identifier
+LED2.c(32): error C202: 'p1': undefined identifier
+LED2.c(35): error C202: 'p1': undefined identifier
+目标未创建
+Build target '目标 1'
+compiling LED2.c...
+LED2.c(6): error C231: 'temp': redefinition
+LED2.c(7): error C141: syntax error near ';', expected '='
+LED2.c(13): error C141: syntax error near ')', expected ';'
+LED2.c(15): error C279: 'temp': multiple initialization
+LED2.c(15): error C247: non-address/-constant initializer
+LED2.c(16): error C141: syntax error near '1000'
+LED2.c(17): error C231: 'P1': redefinition
+LED2.c(17): error C247: non-address/-constant initializer
+LED2.c(17): error C231: 'P1': redefinition
+LED2.c(18): error C279: 'temp': multiple initialization
+LED2.c(18): error C202: 'p1': undefined identifier
+LED2.c(19): error C141: syntax error near '1000'
+LED2.c(20): error C279: 'P1': multiple initialization
+LED2.c(20): error C231: 'P1': redefinition
+LED2.c(20): error C247: non-address/-constant initializer
+LED2.c(20): error C231: 'P1': redefinition
+LED2.c(21): error C279: 'temp': multiple initialization
+LED2.c(21): error C202: 'p1': undefined identifier
+LED2.c(22): error C141: syntax error near '1000'
+LED2.c(23): error C279: 'P1': multiple initialization
+LED2.c(23): error C231: 'P1': redefinition
+LED2.c(23): error C247: non-address/-constant initializer
+LED2.c(23): error C231: 'P1': redefinition
+LED2.c(24): error C279: 'temp': multiple initialization
+LED2.c(24): error C202: 'p1': undefined identifier
+LED2.c(25): error C141: syntax error near '1000'
+LED2.c(26): error C279: 'P1': multiple initialization
+LED2.c(26): error C231: 'P1': redefinition
+LED2.c(26): error C247: non-address/-constant initializer
+LED2.c(26): error C231: 'P1': redefinition
+LED2.c(27): error C279: 'temp': multiple initialization
+LED2.c(27): error C202: 'p1': undefined identifier
+LED2.c(28): error C141: syntax error near '1000'
+LED2.c(29): error C279: 'P1': multiple initialization
+LED2.c(29): error C231: 'P1': redefinition
+LED2.c(29): error C247: non-address/-constant initializer
+LED2.c(29): error C231: 'P1': redefinition
+LED2.c(30): error C279: 'temp': multiple initialization
+LED2.c(30): error C202: 'p1': undefined identifier
+LED2.c(31): error C141: syntax error near '1000'
+LED2.c(32): error C279: 'P1': multiple initialization
+LED2.c(32): error C231: 'P1': redefinition
+LED2.c(32): error C247: non-address/-constant initializer
+LED2.c(32): error C231: 'P1': redefinition
+LED2.c(33): error C279: 'temp': multiple initialization
+LED2.c(33): error C202: 'p1': undefined identifier
+LED2.c(34): error C141: syntax error near '1000'
+LED2.c(35): error C279: 'P1': multiple initialization
+LED2.c(35): error C231: 'P1': redefinition
+LED2.c(35): error C247: non-address/-constant initializer
+LED2.c(35): error C231: 'P1': redefinition
+LED2.c(36): error C279: 'temp': multiple initialization
+LED2.c(36): error C202: 'p1': undefined identifier
+LED2.c(37): error C141: syntax error near '1000'
+LED2.c(38): error C279: 'P1': multiple initialization
+LED2.c(38): error C231: 'P1': redefinition
+LED2.c(38): error C247: non-address/-constant initializer
+LED2.c(38): error C231: 'P1': redefinition
+LED2.c(39): error C141: syntax error near '1000'
+LED2.c(40): error C279: 'temp': multiple initialization
+LED2.c(41): error C141: syntax error near '}'
+LED2.c(45): error C231: 'delayMS': redefinition
+LED2.c(51): error C231: 'delayMS': redefinition
+目标未创建
+Build target '目标 1'
+compiling LED2.c...
+LED2.c(6): error C231: 'temp': redefinition
+LED2.c(7): error C141: syntax error near ';', expected '='
+LED2.c(18): error C202: 'p1': undefined identifier
+LED2.c(21): error C202: 'p1': undefined identifier
+LED2.c(24): error C202: 'p1': undefined identifier
+LED2.c(27): error C202: 'p1': undefined identifier
+LED2.c(30): error C202: 'p1': undefined identifier
+LED2.c(33): error C202: 'p1': undefined identifier
+LED2.c(36): error C202: 'p1': undefined identifier
+目标未创建
+Build target '目标 1'
+compiling LED2.c...
+LED2.c(6): error C231: 'temp': redefinition
+LED2.c(7): error C141: syntax error near ';', expected '='
+LED2.c(18): error C202: 'p1': undefined identifier
+LED2.c(21): error C202: 'p1': undefined identifier
+LED2.c(24): error C202: 'p1': undefined identifier
+LED2.c(27): error C202: 'p1': undefined identifier
+LED2.c(30): error C202: 'p1': undefined identifier
+LED2.c(33): error C202: 'p1': undefined identifier
+LED2.c(36): error C202: 'p1': undefined identifier
+目标未创建
+Build target '目标 1'
+compiling LED2.c...
+LED2.c(6): error C231: 'temp': redefinition
+LED2.c(7): error C141: syntax error near ';', expected '='
+LED2.c(13): error C141: syntax error near ')', expected ';'
+LED2.c(15): error C279: 'temp': multiple initialization
+LED2.c(15): error C247: non-address/-constant initializer
+LED2.c(16): error C141: syntax error near '1000'
+LED2.c(17): error C231: 'P1': redefinition
+LED2.c(17): error C247: non-address/-constant initializer
+LED2.c(17): error C231: 'P1': redefinition
+LED2.c(18): error C279: 'temp': multiple initialization
+LED2.c(18): error C202: 'p1': undefined identifier
+LED2.c(19): error C141: syntax error near '1000'
+LED2.c(20): error C279: 'P1': multiple initialization
+LED2.c(20): error C231: 'P1': redefinition
+LED2.c(20): error C247: non-address/-constant initializer
+LED2.c(20): error C231: 'P1': redefinition
+LED2.c(21): error C279: 'temp': multiple initialization
+LED2.c(21): error C202: 'p1': undefined identifier
+LED2.c(22): error C141: syntax error near '1000'
+LED2.c(23): error C279: 'P1': multiple initialization
+LED2.c(23): error C231: 'P1': redefinition
+LED2.c(23): error C247: non-address/-constant initializer
+LED2.c(23): error C231: 'P1': redefinition
+LED2.c(24): error C279: 'temp': multiple initialization
+LED2.c(24): error C202: 'p1': undefined identifier
+LED2.c(25): error C141: syntax error near '1000'
+LED2.c(26): error C279: 'P1': multiple initialization
+LED2.c(26): error C231: 'P1': redefinition
+LED2.c(26): error C247: non-address/-constant initializer
+LED2.c(26): error C231: 'P1': redefinition
+LED2.c(27): error C279: 'temp': multiple initialization
+LED2.c(27): error C202: 'p1': undefined identifier
+LED2.c(28): error C141: syntax error near '1000'
+LED2.c(29): error C279: 'P1': multiple initialization
+LED2.c(29): error C231: 'P1': redefinition
+LED2.c(29): error C247: non-address/-constant initializer
+LED2.c(29): error C231: 'P1': redefinition
+LED2.c(30): error C279: 'temp': multiple initialization
+LED2.c(30): error C202: 'p1': undefined identifier
+LED2.c(31): error C141: syntax error near '1000'
+LED2.c(32): error C279: 'P1': multiple initialization
+LED2.c(32): error C231: 'P1': redefinition
+LED2.c(32): error C247: non-address/-constant initializer
+LED2.c(32): error C231: 'P1': redefinition
+LED2.c(33): error C279: 'temp': multiple initialization
+LED2.c(33): error C202: 'p1': undefined identifier
+LED2.c(34): error C141: syntax error near '1000'
+LED2.c(35): error C279: 'P1': multiple initialization
+LED2.c(35): error C231: 'P1': redefinition
+LED2.c(35): error C247: non-address/-constant initializer
+LED2.c(35): error C231: 'P1': redefinition
+LED2.c(36): error C279: 'temp': multiple initialization
+LED2.c(36): error C202: 'p1': undefined identifier
+LED2.c(37): error C141: syntax error near '1000'
+LED2.c(38): error C279: 'P1': multiple initialization
+LED2.c(38): error C231: 'P1': redefinition
+LED2.c(38): error C247: non-address/-constant initializer
+LED2.c(38): error C231: 'P1': redefinition
+LED2.c(39): error C141: syntax error near '1000'
+LED2.c(40): error C279: 'temp': multiple initialization
+LED2.c(41): error C141: syntax error near '}'
+LED2.c(45): error C231: 'delayMS': redefinition
+LED2.c(51): error C231: 'delayMS': redefinition
+目标未创建
+Build target '目标 1'
+compiling LED2.c...
+LED2.c(6): error C231: 'temp': redefinition
+LED2.c(7): error C231: 'P1': redefinition
+LED2.c(7): error C247: non-address/-constant initializer
+LED2.c(7): error C231: 'P1': redefinition
+LED2.c(17): error C202: 'p1': undefined identifier
+LED2.c(20): error C202: 'p1': undefined identifier
+LED2.c(23): error C202: 'p1': undefined identifier
+LED2.c(26): error C202: 'p1': undefined identifier
+LED2.c(29): error C202: 'p1': undefined identifier
+LED2.c(32): error C202: 'p1': undefined identifier
+LED2.c(35): error C202: 'p1': undefined identifier
+目标未创建
+Build target '目标 1'
+compiling LED2.c...
+LED2.c(6): error C231: 'temp': redefinition
+目标未创建
+Build target '目标 1'
+compiling LED2.c...
+linking...
+Program Size: data=11.0 xdata=0 code=102
+"LED2" - 0 Error(s), 0 Warning(s).
+Build target '目标 1'
+linking...
+Program Size: data=11.0 xdata=0 code=102
+creating hex file from "LED2"...
+"LED2" - 0 Error(s), 0 Warning(s).
+Build target '目标 1'
+compiling LED2.c...
+linking...
+Program Size: data=11.0 xdata=0 code=105
+creating hex file from "LED2"...
+"LED2" - 0 Error(s), 0 Warning(s).
+Build target '目标 1'
+compiling LED2.c...
+LED2.c(6): error C141: syntax error near '/', expected ')'
+目标未创建
+Build target '目标 1'
+compiling LED2.c...
+LED2.c(6): error C141: syntax error near ';', expected ')'
+目标未创建
+Build target '目标 1'
+compiling LED2.c...
+linking...
+Program Size: data=11.0 xdata=0 code=105
+creating hex file from "LED2"...
+"LED2" - 0 Error(s), 0 Warning(s).
+Build target '目标 1'
+compiling LED2.c...
+linking...
+Program Size: data=11.0 xdata=0 code=105
+creating hex file from "LED2"...
+"LED2" - 0 Error(s), 0 Warning(s).
+Build target '目标 1'
+compiling LED2.c...
+linking...
+Program Size: data=11.0 xdata=0 code=105
+creating hex file from "LED2"...
+"LED2" - 0 Error(s), 0 Warning(s).
+Build target '目标 1'
+compiling LED2.c...
+LED2.c(8): error C231: 'P1': redefinition
+LED2.c(8): error C231: 'P1': redefinition
+目标未创建
+Build target '目标 1'
+compiling LED2.c...
+linking...
+Program Size: data=11.0 xdata=0 code=105
+creating hex file from "LED2"...
+"LED2" - 0 Error(s), 0 Warning(s).
+Build target '目标 1'
+compiling LED2.c...
+linking...
+Program Size: data=11.0 xdata=0 code=105
+creating hex file from "LED2"...
+"LED2" - 0 Error(s), 0 Warning(s).
+Build target '目标 1'
+compiling LED2.c...
+linking...
+Program Size: data=11.0 xdata=0 code=105
+creating hex file from "LED2"...
+"LED2" - 0 Error(s), 0 Warning(s).
+Build target '目标 1'
+compiling LED2.c...
+linking...
+Program Size: data=11.0 xdata=0 code=105
+creating hex file from "LED2"...
+"LED2" - 0 Error(s), 0 Warning(s).
+Build target '目标 1'
+compiling LED2.c...
+LED2.c(8): error C141: syntax error near 'z', expected ')'
+LED2.c(10): error C202: 'z': undefined identifier
+LED2.c(15): error C202: 'uchar': undefined identifier
+LED2.c(15): error C141: syntax error near 'i'
+LED2.c(22): error C202: 'i': undefined identifier
+LED2.c(28): error C202: 'i': undefined identifier
+目标未创建
+Build target '目标 1'
+compiling LED2.c...
+LED2.c(8): error C141: syntax error near 'z', expected ')'
+LED2.c(11): error C202: 'z': undefined identifier
+LED2.c(19): error C202: 'uchar': undefined identifier
+LED2.c(19): error C141: syntax error near 'i'
+LED2.c(26): error C202: 'i': undefined identifier
+LED2.c(32): error C202: 'i': undefined identifier
+目标未创建
+Build target '目标 1'
+compiling LED2.c...
+LED2.c(7): error C129: missing ';' before 'i'
+目标未创建
+Build target '目标 1'
+compiling LED2.c...
+LED2.c(8): error C129: missing ';' before 'i'
+目标未创建
+Build target '目标 1'
+compiling LED2.c...
+LED2.c(7): error C247: non-address/-constant initializer
+LED2.c(9): error C129: missing ';' before 'i'
+目标未创建
+Build target '目标 1'
+compiling LED2.c...
+LED2.c(8): error C129: missing ';' before 'i'
+目标未创建
+Build target '目标 1'
+compiling LED2.c...
+LED2.c(10): error C141: syntax error near 'z', expected ')'
+LED2.c(13): error C202: 'z': undefined identifier
+LED2.c(30): error C202: 'LED': undefined identifier
+LED2.c(36): error C202: 'LED': undefined identifier
+目标未创建
+Build target '目标 1'
+compiling LED2.c...
+LED2.c(30): error C202: 'LED': undefined identifier
+LED2.c(36): error C202: 'LED': undefined identifier
+目标未创建
+Build target '目标 1'
+compiling LED2.c...
+LED2.c(30): error C202: 'LED': undefined identifier
+目标未创建
+Build target '目标 1'
+compiling LED2.c...
+linking...
+Program Size: data=10.0 xdata=0 code=107
+creating hex file from "LED2"...
+"LED2" - 0 Error(s), 0 Warning(s).
+Build target '目标 1'
+compiling LED2.c...
+linking...
+Program Size: data=10.0 xdata=0 code=103
+creating hex file from "LED2"...
+"LED2" - 0 Error(s), 0 Warning(s).
+Build target '目标 1'
+compiling LED2.c...
+linking...
+Program Size: data=11.0 xdata=0 code=105
+creating hex file from "LED2"...
+"LED2" - 0 Error(s), 0 Warning(s).
+Build target '目标 1'
+compiling LED2.c...
+linking...
+Program Size: data=11.0 xdata=0 code=108
+creating hex file from "LED2"...
+"LED2" - 0 Error(s), 0 Warning(s).

@@ -1,0 +1,3 @@
+修改这个文件：xtensa/XtDevTools/install/builds/RC-2010.1-win32/lx106/config/lx106-params
+批量替换掉其中的绝对路径名为你拷贝的绝对路径名，如
+install-prefix = D:/vm/share/xtensa/XtDevTools/install/tools/RC-2010.1-win32/XtensaTools

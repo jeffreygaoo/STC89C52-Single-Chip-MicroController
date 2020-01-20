@@ -1,0 +1,58 @@
+C51 COMPILER V9.57.0.0   TIMER                                                             01/07/2020 15:52:35 PAGE 1   
+
+
+C51 COMPILER V9.57.0.0, COMPILATION OF MODULE TIMER
+OBJECT MODULE PLACED IN timer.OBJ
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE timer.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /*
+   2          function:LED闪烁（间隔为15ms)
+   3          STC89C52：LED的com端为阳极，低电平点亮。
+   4          algorithm:LED1的初始状态是点亮的，按下按键1后开始闪烁（带有消抖处理）
+   5          */
+   6          #include <reg52.h>
+   7          sbit led1=P1^0;
+   8          unsigned int count;
+   9          
+  10          void main(void)
+  11          {
+  12   1              TMOD&=0xfc;
+  13   1              TMOD|=0x01;
+  14   1              
+  15   1              TH0=0xb1;
+  16   1              TL0=0xe0;
+  17   1              
+  18   1              TR0=1;
+  19   1      
+  20   1              while(1)
+  21   1              {
+  22   2                      if(TF0==1)
+  23   2                      {
+  24   3                              TF0=0;
+  25   3                              TH0=0xb1;
+  26   3                              TL0=0xe0;
+  27   3                              count++;
+  28   3                              if(count>=50)
+  29   3                              {
+  30   4                                      count=0;
+  31   4                                      led1=~led1;
+  32   4                              }
+  33   3                      }
+  34   2              }
+  35   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     51    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

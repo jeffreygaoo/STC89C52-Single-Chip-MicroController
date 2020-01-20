@@ -1,0 +1,49 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\HP\Desktop\单片机\四类程序\Seven_Seg_Display\Seven_Seg_Display.uvproj
+Project File Date:  01/06/2020
+
+<h2>Output:</h2>
+Build target '目标 1'
+assembling STARTUP.A51...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?C_START
+    MODULE:  STARTUP.obj (?C_STARTUP)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?C_START
+    MODULE:  STARTUP.obj (?C_STARTUP)
+    ADDRESS: 000DH
+Program Size: data=9.0 xdata=0 code=15
+"Seven_Seg_Display" - 0 Error(s), 2 Warning(s).
+Build target '目标 1'
+compiling Seven_Seg_Display.c...
+linking...
+Program Size: data=9.0 xdata=0 code=84
+"Seven_Seg_Display" - 0 Error(s), 0 Warning(s).
+Build target '目标 1'
+linking...
+Program Size: data=9.0 xdata=0 code=84
+creating hex file from "Seven_Seg_Display"...
+"Seven_Seg_Display" - 0 Error(s), 0 Warning(s).
+Build target '目标 1'
+compiling Seven_Seg_Display.c...
+Seven_Seg_Display.c(17): error C141: syntax error near '/'
+Seven_Seg_Display.c(17): error C199: left side of '->' requires struct/union pointer
+Seven_Seg_Display.c(17): error C141: syntax error near '1111'
+Seven_Seg_Display.c(17): error C141: syntax error near '1110'
+Seven_Seg_Display.c(18): error C141: syntax error near 'P0'
+Seven_Seg_Display.c(18): error C141: syntax error near '/'
+Seven_Seg_Display.c(18): error C199: left side of '->' requires struct/union pointer
+Seven_Seg_Display.c(18): error C141: syntax error near 'dp'
+Seven_Seg_Display.c(19): error C141: syntax error near 'delayMS'
+目标未创建
+Build target '目标 1'
+compiling Seven_Seg_Display.c...
+linking...
+Program Size: data=9.0 xdata=0 code=87
+creating hex file from "Seven_Seg_Display"...
+"Seven_Seg_Display" - 0 Error(s), 0 Warning(s).

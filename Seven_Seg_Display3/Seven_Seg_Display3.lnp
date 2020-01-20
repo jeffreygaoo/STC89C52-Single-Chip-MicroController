@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"Seven_Seg_Display3.obj" 
+TO "Seven_Seg_Display3" 
+RAMSIZE(256) 
